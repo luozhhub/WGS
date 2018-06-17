@@ -35,7 +35,7 @@ output = open("combime_file.snp", "w")
 store_file_path = ""
 store_items = []
 
-for line in open(file_list[[0]], "r"):
+for line in open(file_list[0], "r"):
     items = line.strip("\n").split("\t")
     chr = chrs.index(items[0])
     pos = items[1]
