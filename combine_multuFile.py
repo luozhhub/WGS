@@ -7,7 +7,7 @@ import gzip
 import re
 
 
-def read_gz_file(self, path):
+def read_gz_file(path):
     if os.path.exists(path):
         with open(path, "r") as pf:
             for line in pf:
@@ -20,15 +20,15 @@ sample_list = ["19P", "Flame", "WBY", "m2", "ZK", "YLK", "SO3", "JY", "HKC"]
 chrs = ['chr1', 'chr2', 'chr3', 'chr4', 'chr5', 'chr6', 'chr7', 'chr8', 'chr9', 'chrUn']
 file_list=[]
 for sample in sample_list:
-    file_path = os.path.join("ldata8/kll/fq", sample, sample + ".convert.snp")
+    file_path = os.path.join("/data8/kll/fq", sample, sample + ".convert.snp")
     file_list.append(file_path)
 
 def get_items(file_path=None):
-    items = read_gz_file(file_path).strip("\n").split("\t")
+    items = str(read_gz_file(file_path)).strip("\n").split("\t")
     while chrs.index(items[0]) < chr:
-        items = read_gz_file(file_path).strip("\n").split("\t")
+        items = str(read_gz_file(file_path)).strip("\n").split("\t")
     while items[1] < pos:
-        items = read_gz_file(file_path).strip("\n").split("\t")
+        items = str(read_gz_file(file_path)).strip("\n").split("\t")
     return items
 
 output = open("combime_file.snp", "w")
