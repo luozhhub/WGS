@@ -23,7 +23,7 @@ for sample in sample_list:
     file_path = os.path.join("/data8/kll/fq", sample, sample + ".convert.snp")
     file_list.append(file_path)
 
-def get_items(file_path=None):
+def get_items(file_path=None, chr=None, pos=None):
     items = str(read_gz_file(file_path)).strip("\n").split("\t")
     while chrs.index(items[0]) < chr:
         items = str(read_gz_file(file_path)).strip("\n").split("\t")
@@ -45,7 +45,7 @@ for line in open(file_list[0], "r"):
         if store_file_path == file_path:
             items_x = store_items
         else:
-            items_x = get_items(file_path=file_path)
+            items_x = get_items(file_path=file_path, chr=chr, pos=pos)
         if items_x[1] == pos:
             stri = stri + items_x[2]
         if items_x[1] > pos:
