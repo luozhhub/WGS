@@ -28,7 +28,6 @@ for sample in sample_list:
 def get_items(file_path=None, chr=None, pos=None):
     con = file_handle[file_path]
     items = con.next().strip("\n").split("\t")
-    print items
     while chrs.index(items[0]) < chr:
         items = con.next().strip("\n").split("\t")
     while items[1] < pos:
@@ -56,7 +55,7 @@ for line in open(file_list[0], "r"):
             store_file_path = file_path
             store_items = items_x
             break
-    if len(stri) == 1:
+    if len(stri) < 9:
         continue
     else:
         output.write(stri + "\n")
