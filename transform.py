@@ -12,7 +12,7 @@ class TRANS():
         self.inputFile = "combime_file.snp"
         self.sample_list = ["19P", "Flame", "WBY", "m2", "ZK", "YLK", "SO3", "JY", "HKC"]
         self.header = "\t9\t"
-        self.outputHandle = open("transform_all.snp", "w")
+        self.outputHandle = open(outfile, "w")
 
 
 
